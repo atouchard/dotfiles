@@ -19,13 +19,14 @@
 
 [user]
   name = your name
-  email = <youremail>
+  email = <your email>
 
 [alias]
   st = status
   ci = commit
   oneline = log --pretty=oneline --abbrev-commit --graph --decorate
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
   br = branch
   co = checkout
   df = diff
@@ -37,6 +38,7 @@
   autocrlf = input
   excludesfile = ~/.gitignore-global
   editor = vim
+  pager = less -r
 
 [credential]
   helper = osxkeychain
