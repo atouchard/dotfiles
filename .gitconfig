@@ -22,8 +22,8 @@
     last = log -1 HEAD
 
 [user]
-    name = Alexandre Touchard
-    email = atouchard@voyages-sncf.com
+    name = <your email>
+    email = <your email>
 
 [color "branch"]
     current = yellow reverse
