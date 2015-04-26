@@ -8,23 +8,6 @@
 [color]
     ui = true
 
-[alias]
-    st = status
-    sts = status -sb
-    ci = commit
-    l = log --graph --pretty=format:\"%C(red bold)%h%C(cyan)%d%Creset | %s %C(yellow)[%an, %ar]%Creset\"
-    br = branch
-    co = checkout
-    df = diff
-    dc = diff --cached
-    ls = ls-files
-    showtrackedignored = ls-files -i --exclude-standard
-    last = log -1 HEAD
-
-[user]
-    name = <your email>
-    email = <your email>
-
 [color "branch"]
     current = yellow reverse
     local = yellow
@@ -41,6 +24,26 @@
     changed = green
     untracked = cyan
 
+[alias]
+    st = status
+    stb = status -sb
+    ci = commit
+    l = log --graph --pretty=format:\"%C(red bold)%h%C(cyan)%d%Creset | %s %C(yellow)[%an, %ar]%Creset\"
+    br = branch
+    co = checkout
+    df = diff
+    dc = diff --cached
+    ls = ls-files
+    showtrackedignored = ls-files -i --exclude-standard
+    last = log -1 HEAD
+    s = stash
+    sl = stash list
+    sp = stash pop
+
+[user]
+    name = <your name>
+    email = <your email>
+
 [diff]
     mnemonicprefix = true
 
@@ -53,11 +56,12 @@
 [pull]
     rebase = preserve
 
-[filter "media"]
-    clean = git media clean %f
-    smudge = git media smudge %f
-    required = true
-
 [credential]
     helper = osxkeychain
+
+[rerere]
+    enabled = true
+
+[help]
+    autocorrect = -1
 
