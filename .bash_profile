@@ -4,12 +4,12 @@
 export JAVA_HOME=`/usr/libexec/java_home`
 export ANT_HOME=~/tools/apache-ant-1.9.4
 export MVN_HOME=~/tools/apache-maven-3.2.3
-export VERTX_HOME=~/tools/vert.x-2.1.2
+export VERTX_HOME=~/workspace/tools/vert.x-2.1.2
 export SYMFONY__MACHINE__NAME=local
 export DOCKER_HOST=tcp://192.168.59.103:2375
 
 ## PATH
-export PATH=/usr/local/bin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin:/usr/local/git/bin:$HOME/.rvm/bin:$ANT_HOME/bin:$MVN_HOME/bin:$HOME/workspace/drupaltools/drush:$VERTX_HOME/bin:$PATH
+export PATH=/usr/local/git/bin:/usr/local/bin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin::$HOME/.rvm/bin:$ANT_HOME/bin:$MVN_HOME/bin:$HOME/workspace/drupaltools/drush:$VERTX_HOME/bin:$PATH
 export EDITOR="vim"
 
 # Open specified files in Sublime Text
@@ -23,6 +23,7 @@ alias l="ls -lF ${colorflag}" # all files, in long format
 alias ll="ls -laFh ${colorflag}" # all files inc dotfiles, in long format
 alias lsd='ls -lF ${colorflag} | grep "^d"' # only directories
 
+alias chrome="/Applications/Google\\ \\Chrome.app/Contents/MacOS/Google\\ \\Chrome"
 alias drushsite='drush -l http://local.org.aide.voyages-sncf.com'
 
 # Quicker navigation
@@ -111,14 +112,10 @@ symbol="\[$YELLOW\]λ  "
 export PS1="\[${BOLD}${LIGHT_RED}\]\u \[$WHITE\]in \[$LIGHT_GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$LIGHT_BLUE\]\$(parse_git_branch)\[$WHITE\]\n$symbol\[$RESET\]"
 export PS2="\[$ORANGE\]→ \[$RESET\]"
 
-
 ### Misc
 
 # Only show the current directory's name in the tab
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
-
-# init z! (https://github.com/rupa/z)
-. ~/z.sh
 
 
 ## Ruby
