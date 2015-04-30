@@ -1,0 +1,8 @@
+
+" Theme
+set background=dark
+colorscheme Tomorrow-Night-Bright
+"colorscheme distinguished
+
+" 256 color terminal
+set t_Co=256

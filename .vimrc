@@ -1,10 +1,7 @@
 
-" Theme
-set background=dark
-colorscheme Tomorrow-Night-Bright
-
-" 256 color terminal
-set t_Co=256
+" Set 'nocompatible' to ward off unexpected things that your distro might
+" have made, as well as sanely reset options when re-sourcing .vimrc
+set nocompatible
 
 " Sets how many lines of history VIM has to remember
 set history=700
@@ -27,13 +24,11 @@ set wildignore+=*.swp,*~,._*
 " OSX bullshit
 set wildignore+=*.DS_Store
 
+" -----------------------------------------------------------------------------
 " Use pathogen
+" -----------------------------------------------------------------------------
 execute pathogen#infect()
 filetype plugin indent on
-
-" Set 'nocompatible' to ward off unexpected things that your distro might
-" have made, as well as sanely reset options when re-sourcing .vimrc
-set nocompatible
 
 " Activate mouse (bad use)
 set mouse=a
@@ -83,10 +78,9 @@ set autoindent
 " Display line numbers on the left
 set number
 
-"------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Indentation options
-"
-" Indentation settings for using 2 spaces instead of tabs.
+" -----------------------------------------------------------------------------
 set tabstop=2                   " tab is two spaces
 set softtabstop=2               " softtab is two spaces
 set shiftwidth=2                " autoindent is two spaces
@@ -96,14 +90,25 @@ set expandtab                   " convert tabs to spaces
 vnoremap < <gv
 vnoremap > >gv
 
+" -----------------------------------------------------------------------------
 " Force sudo
+" -----------------------------------------------------------------------------
 cmap w!! %!sudo tee > dev/null %
 
+" -----------------------------------------------------------------------------
 " ctrlp plugin config
-let g:ctrlp_custom_ignore = {'scm': '\v[\/]\.(git|hg|svn)$','dir': '\v[\/](node_modules|dist|\.sass-cache|bower_components|vendor|vendors|build|\.tmp)$'}
+" https://github.com/kien/ctrlp.vim/issues/174#issuecomment-49747252
+" -----------------------------------------------------------------------------
+let g:ctrlp_custom_ignore = {
+  \ 'scm': '\v[\/]\.(git|hg|svn)$',
+  \ 'dir': '\v[\/](node_modules|dist|\.sass-cache|bower_components|vendor|vendors|build|\.tmp)$',
+  \ 'file': '\v\.(exe|so|dll|jpg|gif|png)$',
+  \ }
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
+" -----------------------------------------------------------------------------
 " delimitMate plugin config
+" -----------------------------------------------------------------------------
 let g:delimitMate_autoclose = 1
 let g:delimitMate_expand_cr = 2
 let g:delimitMate_expand_space = 1
@@ -112,7 +117,9 @@ let g:delimitMate_smart_quotes = 1
 let g:delimitMate_jump_expansion = 1
 let g:delimitMate_matchpairs = "(:),[:],{:},<:>"
 
+" -----------------------------------------------------------------------------
 " Airline plugin config
+" -----------------------------------------------------------------------------
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
@@ -131,7 +138,9 @@ function! s:ToggleMouse()
     endif
 endfunction
 
+" -----------------------------------------------------------------------------
 " Toggle Vexplore with Ctrl-E
+" -----------------------------------------------------------------------------
 function! ToggleVExplorer()
     if exists("t:expl_buf_num")
         let expl_win_num = bufwinnr(t:expl_buf_num)
@@ -153,30 +162,47 @@ endfunction
 
 map <silent> <C-E> :call ToggleVExplorer()<CR>
 
+" -----------------------------------------------------------------------------
 " Hit enter in the file browser to open the selected
 " file with :vsplit to the right of the browser.
+" -----------------------------------------------------------------------------
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_liststyle=3
 
+" -----------------------------------------------------------------------------
 " Change directory to the current buffer when opening files.
+" -----------------------------------------------------------------------------
 set autochdir
 
+" -----------------------------------------------------------------------------
 " Remove whitespace
+" -----------------------------------------------------------------------------
 function! <SID>StripTrailingWhitespaces()
     let l = line(".")
     let c = col(".")
     %s/\s\+$//e
     call cursor(l, c)
-endfun
+endfunction
 
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
+" -----------------------------------------------------------------------------
 " Show whitespace
+" -----------------------------------------------------------------------------
 set list
-set listchars=tab:>.,trail:.,nbsp:.
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
 autocmd filetype html,xml set listchars-=tab:>.
 
+" -----------------------------------------------------------------------------
 " CSS snippet
+" -----------------------------------------------------------------------------
 autocmd BufNewFile,BufRead *.scss set ft=scss.css
+
+" -----------------------------------------------------------------------------
+" Local settings
+" -----------------------------------------------------------------------------
+if filereadable(glob("$HOME/.vimrc.local"))
+    source $HOME/.vimrc.local
+endif
 
