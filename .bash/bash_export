@@ -1,0 +1,19 @@
+
+## Global applications
+export JAVA_HOME=`/usr/libexec/java_home`
+export ANT_HOME=$HOME/tools/apache-ant-1.9.4
+export MVN_HOME=$HOME/tools/apache-maven-3.2.3
+export DOCKER_HOST=tcp://192.168.59.103:2375
+
+## PATH
+export PATH=/usr/local/sbin:/usr/local/bin:$JAVA_HOME/bin:/usr/local/mysql/bin:/usr/X11/bin:$HOME/.rvm/bin:$ANT_HOME/bin:$MVN_HOME/bin:$HOME/workspace/drupaltools/drush:/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
+
+export EDITOR="vim"
+
+# Larger bash history (allow 32³ entries; default is 500)
+export HISTSIZE=32768
+export HISTFILESIZE=$HISTSIZE
+export HISTCONTROL=ignoredups
+
+# Make some commands not show up in history
+export HISTIGNORE="vi:ll:ls:ls *:cd:cd -:pwd;exit:date:"

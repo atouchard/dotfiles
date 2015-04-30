@@ -1,0 +1,35 @@
+### Aliases
+
+# Open specified files in Sublime Text
+alias s='subl'
+
+# Color LS
+colorflag="-G"
+alias ls="ls ${colorflag}"
+alias l="ls -lF ${colorflag}" # all files, in long format
+alias ll="ls -laFh ${colorflag}" # all files inc dotfiles, in long format
+alias lsd='ls -lF ${colorflag} | grep "^d"' # only directories
+
+alias chrome="/Applications/Google\\ \\Chrome.app/Contents/MacOS/Google\\ \\Chrome"
+
+# Quicker navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+## Alias shortcuts
+alias ggrep="git grep --color -n -P"
+
+## Alias app
+alias mongod="mongod --dbpath ~/data/db"
+
+# Shortcuts to my Code folder in my home directory
+alias workspace="cd ~/workspace"
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
+# Colored up cat!
+# You must install Pygments first - "sudo easy_install Pygments"
+alias c='pygmentize -O style=monokai -f console256 -g'

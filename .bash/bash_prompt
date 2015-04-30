@@ -1,0 +1,61 @@
+
+# Git branch details
+function parse_git_dirty() {
+  [[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] && echo "*"
+}
+
+function parse_git_branch() {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+}
+
+### Prompt Colors
+# Modified version of @gf3’s Sexy Bash Prompt
+# (https://github.com/gf3/dotfiles)
+if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
+  export TERM=gnome-256color
+elif infocmp xterm-256color >/dev/null 2>&1; then
+  export TERM=xterm-256color
+fi
+
+
+BLACK="\033[01;30m"
+BLUE="\[\033[0;34m\]"
+LIGHT_BLUE="\[\033[1;36m\]"
+RED="\033[0;31m"
+LIGHT_RED="\[\033[1;31m\]"
+GREEN="\033[1;32m"
+LIGHT_GREEN="\[\033[1;32m\]"
+YELLOW="\033[1;33m"
+LIGHT_YELLOW="\033[0;33m"
+PURPLE="\033[1;35m"
+WHITE="\033[1;37m"
+LIGHT_GRAY="\[\033[0;37m\]"
+BOLD=""
+RESET="\033[m"
+
+export BLACK
+export BLUE
+export LIGHT_BLUE
+export RED
+export LIGHT_RED
+export GREEN
+export LIGHT_GREEN
+export YELLOW
+export LIGHT_YELLOW
+export PURPLE
+export WHITE
+export LIGHT_GRAY
+export BOLD
+export RESET
+
+# Change this symbol to something sweet.
+# (http://en.wikipedia.org/wiki/Unicode_symbols)
+symbol="\[$YELLOW\]λ  "
+
+export PS1="\[${BOLD}${LIGHT_RED}\]\u \[$WHITE\]in \[$LIGHT_GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$LIGHT_BLUE\]\$(parse_git_branch)\[$WHITE\]\n$symbol\[$RESET\]"
+export PS2="\[$ORANGE\]→ \[$RESET\]"
+
+### Misc
+
+# Only show the current directory's name in the tab
+export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
