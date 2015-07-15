@@ -1,36 +1,36 @@
-[submodule ".vim/bundle/ctrlp.vim"]
-	path = .vim/bundle/ctrlp.vim
+[submodule ".vim.symlink/bundle/ctrlp.vim"]
+	path = .vim.symlink/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
-[submodule ".vim/bundle/delimitMate"]
-	path = .vim/bundle/delimitMate
+[submodule ".vim.symlink/bundle/delimitMate"]
+	path = .vim.symlink/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
-[submodule ".vim/bundle/emmet-vim"]
-	path = .vim/bundle/emmet-vim
+[submodule ".vim.symlink/bundle/emmet-vim"]
+	path = .vim.symlink/bundle/emmet-vim
 	url = https://github.com/mattn/emmet-vim.git
-[submodule ".vim/bundle/nerdtree"]
-	path = .vim/bundle/nerdtree
+[submodule ".vim.symlink/bundle/nerdtree"]
+	path = .vim.symlink/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
+[submodule ".vim.symlink/bundle/syntastic"]
+	path = .vim.symlink/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule ".vim/bundle/tlib_vim"]
-	path = .vim/bundle/tlib_vim
+[submodule ".vim.symlink/bundle/tlib_vim"]
+	path = .vim.symlink/bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git
-[submodule ".vim/bundle/vim-addon-mw-utils"]
-	path = .vim/bundle/vim-addon-mw-utils
+[submodule ".vim.symlink/bundle/vim-addon-mw-utils"]
+	path = .vim.symlink/bundle/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule ".vim/bundle/vim-airline"]
-	path = .vim/bundle/vim-airline
+[submodule ".vim.symlink/bundle/vim-airline"]
+	path = .vim.symlink/bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
-[submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
+[submodule ".vim.symlink/bundle/vim-fugitive"]
+	path = .vim.symlink/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/vim-javascript-syntax"]
-	path = .vim/bundle/vim-javascript-syntax
+[submodule ".vim.symlink/bundle/vim-javascript-syntax"]
+	path = .vim.symlink/bundle/vim-javascript-syntax
 	url = https://github.com/jelera/vim-javascript-syntax.git
-[submodule ".vim/bundle/vim-snipmate"]
-	path = .vim/bundle/vim-snipmate
+[submodule ".vim.symlink/bundle/vim-snipmate"]
+	path = .vim.symlink/bundle/vim-snipmate
 	url = https://github.com/garbas/vim-snipmate.git
-[submodule ".vim/bundle/vim-snippets"]
-	path = .vim/bundle/vim-snippets
+[submodule ".vim.symlink/bundle/vim-snippets"]
+	path = .vim.symlink/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git

@@ -166,9 +166,10 @@ map <silent> <C-E> :call ToggleVExplorer()<CR>
 " Hit enter in the file browser to open the selected
 " file with :vsplit to the right of the browser.
 " -----------------------------------------------------------------------------
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_liststyle=3
+let g:netrw_browse_split=4 " Use the previous window to open file
+let g:netrw_altv=1
+let g:netrw_liststyle=3 " Tree view
+let g:netrw_winsize=40 " Width of netrw panel
 
 " -----------------------------------------------------------------------------
 " Change directory to the current buffer when opening files.
