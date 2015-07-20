@@ -39,6 +39,7 @@
     s = stash
     sl = stash list
     sp = stash pop
+    alias = config --get-regexp alias
 
 [user]
     name = <your name>
