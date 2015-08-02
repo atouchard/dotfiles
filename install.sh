@@ -5,6 +5,7 @@ DOTFILES=$HOME/.dotfiles
 echo "Installing dotfiles"
 
 echo "Initializing submodule(s)"
+git submodule init
 git submodule update --init --recursive
 
 echo "Creating symlinks"
@@ -14,3 +15,4 @@ for file in $linkables ; do
   echo "Creating symlink for $file"
   ln -s $DOTFILES/$file $target
 done
+
