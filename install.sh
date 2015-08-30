@@ -12,7 +12,7 @@ echo "Creating symlinks"
 linkables=$( find . -name "*.symlink" -exec basename {} \; )
 for file in $linkables ; do
   target="$HOME/$( basename $file ".symlink"  )"
-  echo "Creating symlink for $file"
+  echo "Creating symlink for $DOTFILES/$file to $target"
   ln -s $DOTFILES/$file $target
 done
 
