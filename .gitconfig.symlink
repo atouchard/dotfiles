@@ -3,7 +3,6 @@
     autocrlf = input
     excludesfile = ~/.gitignore
     editor = vim
-    pager = /usr/local/git/contrib/diff-highlight | less
 
 [color]
     ui = true
@@ -47,9 +46,6 @@
 
 [diff]
     mnemonicprefix = true
-
-[merge]
-    tool = kdiff3
 
 [push]
     default = upstream
