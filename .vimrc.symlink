@@ -14,6 +14,9 @@ set statusline=%t\ %y%m
 set visualbell
 set noerrorbells
 
+" No swap file
+set noswapfile
+
 " Default encoding
 set encoding=utf8
 
@@ -81,6 +84,15 @@ set autoindent
 
 " Display line numbers on the left
 set number
+
+" Use relative line numbers
+set relativenumber
+
+" Configure relative line numbers off at certain times
+autocmd FocusLost * :set number | set norelativenumber
+autocmd FocusGained * :set relativenumber | set nonumber
+autocmd InsertEnter * :set number | set norelativenumber
+autocmd InsertLeave * :set relativenumber | set nonumber
 
 " -----------------------------------------------------------------------------
 " Indentation options
