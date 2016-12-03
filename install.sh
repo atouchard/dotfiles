@@ -16,3 +16,5 @@ for file in $linkables ; do
   ln -s $DOTFILES/$file $target
 done
 
+touch $HOME/.gitconfig.user
+touch $HOME/.vimrc.local

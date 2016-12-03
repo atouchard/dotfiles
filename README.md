@@ -7,3 +7,5 @@
 1. `./install.sh`
 
 Note: install script inspired by https://github.com/nicknisi/dotfiles
+
+You can extend vim in $HOME/.vimrc.local and git in $HOME/.gitconfig.user

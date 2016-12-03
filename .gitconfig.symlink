@@ -39,6 +39,9 @@
     sl = stash list
     sp = stash pop
     alias = config --get-regexp alias
+    rc = rebase --continue
+    rs = rebase --skip
+    puf = push --force
 
 [user]
     name = <your name>
@@ -62,3 +65,5 @@
 [help]
     autocorrect = -1
 
+[include]
+  path = .gitconfig.user
