@@ -40,8 +40,8 @@
     alias = config --get-regexp alias
     rc = rebase --continue
     rs = rebase --skip
-    puf = push --force
     mf = merge --no-ff
+    puf = push --force-with-lease
 
 [user]
     name = <your name>
