@@ -39,9 +39,12 @@
     sp = stash pop
     alias = config --get-regexp alias
     rc = rebase --continue
+    ra= rebase --abort
     rs = rebase --skip
     mf = merge --no-ff
     puf = push --force-with-lease
+    rh = reset --hard
+    whe = branch --contains
 
 [user]
     name = <your name>
