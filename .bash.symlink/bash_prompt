@@ -17,7 +17,7 @@ elif infocmp xterm-256color >/dev/null 2>&1; then
   export TERM=xterm-256color
 fi
 
-
+# Colors
 BLACK="\033[01;30m"
 BLUE="\[\033[0;34m\]"
 LIGHT_BLUE="\[\033[1;36m\]"
@@ -53,7 +53,6 @@ export RESET
 symbol="\[$YELLOW\]λ  "
 
 export PS1="\[${BOLD}${LIGHT_RED}\]\u \[$WHITE\]in \[$LIGHT_GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$LIGHT_BLUE\]\$(parse_git_branch)\[$WHITE\]\n$symbol\[$RESET\]"
-export PS2="\[$ORANGE\]→ \[$RESET\]"
 
 ### Misc
 
