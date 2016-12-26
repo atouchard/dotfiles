@@ -1,0 +1,6 @@
+
+# Docker
+alias d="docker"
+alias dps="docker ps"
+alias dpa="docker ps -a"
+alias di="docker images"

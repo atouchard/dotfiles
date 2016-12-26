@@ -1,5 +1,7 @@
 ### Aliases
 
+. $HOME/.bash/alias/docker
+
 # Open specified files in Sublime Text
 alias s='subl'
 
@@ -25,6 +27,3 @@ alias workspace="cd ~/workspace"
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
-# Colored up cat!
-# You must install Pygments first - "sudo easy_install Pygments"
-alias c='pygmentize -O style=monokai -f console256 -g'
