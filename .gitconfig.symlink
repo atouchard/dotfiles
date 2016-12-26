@@ -46,10 +46,6 @@
     rh = reset --hard
     whe = branch --contains
 
-[user]
-    name = <your name>
-    email = <your email>
-
 [diff]
     mnemonicprefix = true
 
