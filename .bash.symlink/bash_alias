@@ -1,9 +1,7 @@
 ### Aliases
 
 . $HOME/.bash/alias/docker
-
-# Open specified files in Sublime Text
-alias s='subl'
+. $HOME/.bash/alias/applications
 
 # Color LS
 colorflag="-G"
@@ -20,10 +18,4 @@ alias .....="cd ../../../.."
 
 ## Alias shortcuts
 alias ggrep="git grep --color -n -P"
-
-# Shortcuts to my Code folder in my home directory
-alias workspace="cd ~/workspace"
-
-# Enable aliases to be sudo’ed
-alias sudo='sudo '
 
